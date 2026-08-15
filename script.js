@@ -1,93 +1,54 @@
 let score = 0;
 
 function checkAnswer(button, isCorrect) {
-  
-  let question = button.closest(".question");
-  let buttons = question.querySelectorAll("button");
-  let result = question.querySelector(".result");
-  
-  buttons.forEach(btn => btn.disabled = true);
-  
-  if (isCorrect) {
-    button.classList.add("correct");
-    result.innerHTML = "✅ Correct!";
-    score++;
-  } else {
-    button.classList.add("wrong");
-    result.innerHTML = "❌ Incorrect!";
-  }
-  
-  result.style.display = "block";
-  
-  if (score === 3) {
-    document.getElementById("quizComplete").style.display = "block";
-  }
-}
-function checkAnswer(button,isCorrect){
 
-let card = button.parentElement;
+    // Works with both .question and .quiz-question
+    const question = button.closest(".question, .quiz-question");
 
-let buttons = card.querySelectorAll("button");
+    if (!question) return;
 
-buttons.forEach(btn=>btn.disabled=true);
-
-let result = card.querySelector(".result");
-
-if(isCorrect){
-
-button.classList.add("correct");
-
-result.innerHTML="✅ Correct!";
-
-}else{
-
-button.classList.add("wrong");
-
-result.innerHTML="❌ Incorrect!";
-
-buttons.forEach(btn=>{
-
-if(btn.getAttribute("onclick").includes("true")){
-
-btn.classList.add("correct");
-
-}
-
-});
-
-}
-
-}
-/* ================= CHAPTER 3 QUIZ ================= */
-
-function checkAnswer(button, isCorrect) {
-
-    const question = button.closest(".quiz-question");
+    // Works with both .result and .answer-feedback
+    const result = question.querySelector(".result, .answer-feedback");
 
     const buttons = question.querySelectorAll("button");
 
-    const feedback = question.querySelector(".answer-feedback");
+    // Disable all buttons after an answer
+    buttons.forEach(btn => {
+        btn.disabled = true;
+    });
 
     if (isCorrect) {
 
         button.classList.add("correct");
 
-        feedback.textContent = "✅ Correct! Great job.";
+        if (result) {
+            result.textContent = "✅ Correct! Great job.";
+            result.style.display = "block";
+        }
 
-        feedback.style.color = "#4ade80";
-
-        buttons.forEach(function(btn) {
-            btn.disabled = true;
-        });
+        score++;
 
     } else {
 
         button.classList.add("wrong");
 
-        feedback.textContent = "❌ Not quite. Try again!";
+        if (result) {
+            result.textContent = "❌ Incorrect!";
+            result.style.display = "block";
+        }
 
-        feedback.style.color = "#f87171";
-
+        // Highlight the correct answer
+        buttons.forEach(btn => {
+            if (btn.getAttribute("onclick")?.includes("true")) {
+                btn.classList.add("correct");
+            }
+        });
     }
 
+    // Show completion message
+    const quizComplete = document.getElementById("quizComplete");
+
+    if (quizComplete && score >= 3) {
+        quizComplete.style.display = "block";
+    }
 }
