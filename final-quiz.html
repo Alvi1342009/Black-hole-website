@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Final Challenge | Black Hole Explorer</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="logo">
+🌌 Black Hole Explorer
+</div>
+
+<ul class="menu">
+
+<li><a href="index.html">🏠 Home</a></li>
+
+<li><a href="basics.html">📖 Basics</a></li>
+
+<li><a href="formation.html">⭐ Formation</a></li>
+
+<li><a href="inside.html">🌌 Inside</a></li>
+
+<li><a href="types.html">⚫ Types</a></li>
+
+<li><a href="hawking-radiation.html">💡 Radiation</a></li>
+
+<li><a href="gravitational-waves.html">🌊 Waves</a></li>
+
+<li><a href="gallery.html">📸 Gallery</a></li>
+
+<li><a href="famous-black-holes.html">🌠 Famous Black Holes</a></li>
+
+<li><a href="myths-vs-facts.html">🧩 Myths vs Facts</a></li>
+
+<li><a href="final-quiz.html" class="active">🎓 Final Quiz</a></li>
+
+<li><a href="creator.html">👤 Creator</a></li>
+
+      <li><a href="feedback.html">💬 Feedback</a></li>
+
+
+</ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="final-hero">
+
+<h1>🎓 The Ultimate Black Hole Challenge</h1>
+
+<p>
+
+You've explored black hole basics, formation, the event horizon,
+types of black holes, Hawking radiation, gravitational waves,
+NASA discoveries, famous black holes, and common myths.
+
+Now it's time to test everything you've learned!
+
+</p>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section class="final-quiz">
+
+<h2>🌌 Final Challenge</h2>
+
+<p class="quiz-intro">
+
+10 questions. All chapters. One final test.
+
+</p>
+
+
+<!-- QUESTION 1 -->
+
+<div class="quiz-question">
+
+<h3>1. What is a black hole?</h3>
+
+<button onclick="checkAnswer(this,true)">
+A. A region of spacetime with extremely strong gravity
+</button>
+
+<button onclick="checkAnswer(this,false)">
+B. An empty hole in space
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. A giant star
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. A planet without light
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 2 -->
+
+<div class="quiz-question">
+
+<h3>2. How can a stellar-mass black hole form?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. When two planets collide
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. When a massive star collapses after exhausting its nuclear fuel
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. When a galaxy disappears
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. When a comet freezes
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 3 -->
+
+<div class="quiz-question">
+
+<h3>3. What is the event horizon?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. The surface of a star
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. The boundary beyond which light cannot escape
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. The center of a galaxy
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. The accretion disk
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 4 -->
+
+<div class="quiz-question">
+
+<h3>4. What is Hawking radiation?</h3>
+
+<button onclick="checkAnswer(this,true)">
+A. Theoretical radiation associated with quantum effects near black holes
+</button>
+
+<button onclick="checkAnswer(this,false)">
+B. Light produced by stars
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. Radiation from the Sun
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. Radio signals from galaxies
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 5 -->
+
+<div class="quiz-question">
+
+<h3>5. What happens when two black holes merge?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. They turn into stars
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. They form a larger black hole and produce gravitational waves
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. They disappear without any effect
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. They become planets
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 6 -->
+
+<div class="quiz-question">
+
+<h3>6. Which collaboration produced the first image of a black hole?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. NASA
+</button>
+
+<button onclick="checkAnswer(this,false)">
+B. Hubble
+</button>
+
+<button onclick="checkAnswer(this,true)">
+C. Event Horizon Telescope
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. LIGO
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 7 -->
+
+<div class="quiz-question">
+
+<h3>7. Which black hole is at the center of our Milky Way?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. M87*
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. Sagittarius A*
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. TON 618
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. Gaia BH1
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 8 -->
+
+<div class="quiz-question">
+
+<h3>8. What does LIGO detect?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. Black hole images
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. Gravitational waves
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. X-rays from planets
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. Visible light from stars
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 9 -->
+
+<div class="quiz-question">
+
+<h3>9. Which statement about black holes is TRUE?</h3>
+
+<button onclick="checkAnswer(this,false)">
+A. They are cosmic vacuum cleaners
+</button>
+
+<button onclick="checkAnswer(this,true)">
+B. They come in different masses and sizes
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. Every black hole is larger than a galaxy
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. They constantly travel around swallowing everything
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- QUESTION 10 -->
+
+<div class="quiz-question">
+
+<h3>10. What was the first black hole photographed?</h3>
+
+<button onclick="checkAnswer(this,true)">
+A. M87*
+</button>
+
+<button onclick="checkAnswer(this,false)">
+B. Sagittarius A*
+</button>
+
+<button onclick="checkAnswer(this,false)">
+C. Cygnus X-1
+</button>
+
+<button onclick="checkAnswer(this,false)">
+D. Gaia BH1
+</button>
+
+<p class="answer-feedback"></p>
+
+</div>
+
+
+<!-- ================= END ================= -->
+
+<section class="final-message">
+
+<h2>🌌 You Made It!</h2>
+
+<p>
+
+Whether you got every question right or discovered something new,
+you've now completed your journey through the mysterious world of
+black holes.
+
+</p>
+
+<a href="creator.html" class="continue-chapter">
+
+👤 Meet the Creator
+
+<span>→</span>
+
+</a>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
