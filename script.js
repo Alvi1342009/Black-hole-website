@@ -2,17 +2,14 @@ let score = 0;
 
 function checkAnswer(button, isCorrect) {
 
-    // Works with both .question and .quiz-question
-    const question = button.closest(".question, .quiz-question");
+    const question = button.closest(".quiz-question, .question");
 
     if (!question) return;
 
-    // Works with both .result and .answer-feedback
-    const result = question.querySelector(".result, .answer-feedback");
-
     const buttons = question.querySelectorAll("button");
+    const feedback = question.querySelector(".answer-feedback, .result");
 
-    // Disable all buttons after an answer
+    // Prevent answering the same question twice
     buttons.forEach(btn => {
         btn.disabled = true;
     });
@@ -21,9 +18,9 @@ function checkAnswer(button, isCorrect) {
 
         button.classList.add("correct");
 
-        if (result) {
-            result.textContent = "✅ Correct! Great job.";
-            result.style.display = "block";
+        if (feedback) {
+            feedback.textContent = "✅ Correct! Great job.";
+            feedback.style.display = "block";
         }
 
         score++;
@@ -32,23 +29,28 @@ function checkAnswer(button, isCorrect) {
 
         button.classList.add("wrong");
 
-        if (result) {
-            result.textContent = "❌ Incorrect!";
-            result.style.display = "block";
+        if (feedback) {
+            feedback.textContent = "❌ Incorrect!";
+            feedback.style.display = "block";
         }
 
-        // Highlight the correct answer
+        // Show the correct answer
         buttons.forEach(btn => {
-            if (btn.getAttribute("onclick")?.includes("true")) {
+            const onclick = btn.getAttribute("onclick");
+
+            if (onclick && onclick.includes("true")) {
                 btn.classList.add("correct");
             }
         });
     }
 
-    // Show completion message
-    const quizComplete = document.getElementById("quizComplete");
+    // Show completion message after 5 correct answers
+    if (score >= 5) {
 
-    if (quizComplete && score >= 3) {
-        quizComplete.style.display = "block";
+        const complete = document.querySelector(".quiz-complete");
+
+        if (complete) {
+            complete.style.display = "block";
+        }
     }
 }
